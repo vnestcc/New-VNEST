@@ -1,0 +1,272 @@
+/* Alumni Component Styles */
+.alumni-container {
+    background-color: #0a0a0a;
+    padding: 0px 20px 60px 20px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .alumni-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+  }
+  
+  /* Image Section */
+  .alumni-image-section {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .green-background1 {
+    position: absolute;
+    width: 320px;
+    height: 420px;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    z-index: 1;
+    top: 148px;
+    left: 35px;
+  }
+  
+  .alumni-image {
+    position: relative;
+    z-index: 2;
+    margin-left: 80px;
+    margin-top: 30px;
+  }
+  
+  .alumni-image img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  
+  /* Text Section */
+  .alumni-text-section {
+    flex: 1;
+    padding-left: 40px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .quote {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 40px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .attribution {
+    margin-top: 30px;
+  }
+  
+  .author {
+    font-size: 1.3rem;
+    color: #999;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .year {
+    font-size: 0.9rem;
+    color: #8b5cf6;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  /* Animation Classes */
+  .slide-in-left {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .alumni-content {
+      gap: 40px;
+    }
+    
+    .alumni-text-section {
+      padding-left: 20px;
+    }
+    
+    .quote {
+      font-size: 1.9rem;
+    }
+    
+    .green-background1 {
+      width: 280px;
+      height: 380px;
+      top: 120px;
+      left: 30px;
+    }
+    
+    .alumni-image img {
+      width: 350px;
+      height: 450px;
+    }
+    
+    .alumni-image {
+      margin-left: 70px;
+      margin-top: 25px;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .alumni-container {
+      padding: 40px 15px;
+      min-height: auto;
+    }
+    
+    .alumni-content {
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+    }
+    
+    .alumni-image-section {
+      order: 1;
+      transform: translateY(50px);
+      justify-content: center;
+    }
+    
+    .alumni-text-section {
+      order: 2;
+      padding-left: 0;
+      transform: translateY(50px);
+    }
+    
+    .slide-in-left {
+      transform: translateY(0);
+    }
+    
+    .slide-in-right {
+      transform: translateY(0);
+    }
+    
+    .green-background1 {
+      width: 220px;
+      height: 300px;
+      top: 80px;
+      left: 20px;
+    }
+    
+    .alumni-image img {
+      width: 280px;
+      height: 360px;
+    }
+    
+    .alumni-image {
+      margin-left: 40px;
+      margin-top: 15px;
+    }
+    
+    .quote {
+      font-size: 1.6rem;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    
+    .attribution {
+      text-align: left;
+    }
+  }
+  
+  /* Small Mobile Styles */
+  @media (max-width: 480px) {
+    .alumni-container {
+      padding: 60px 10px;
+    }
+    
+    .alumni-content {
+      gap: 30px;
+    }
+    
+    .green-background1 {
+      width: 180px;
+      height: 240px;
+      top: 60px;
+      left: 15px;
+    }
+    
+    .alumni-image img {
+      width: 220px;
+      height: 280px;
+    }
+    
+    .alumni-image {
+      margin-left: 30px;
+      margin-top: 10px;
+    }
+    
+    .quote {
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+    
+    .author {
+      font-size: 1.1rem;
+    }
+    
+    .year {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Extra Small Mobile Styles */
+  @media (max-width: 360px) {
+    .alumni-container {
+      padding: 20px 8px;
+    }
+    
+    .green-background1 {
+      width: 160px;
+      height: 220px;
+      top: 50px;
+      left: 10px;
+    }
+    
+    .alumni-image img {
+      width: 200px;
+      height: 260px;
+    }
+    
+    .alumni-image {
+      margin-left: 25px;
+      margin-top: 8px;
+    }
+    
+    .quote {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    
+    .author {
+      font-size: 1rem;
+    }
+    
+    .year {
+      font-size: 0.75rem;
+    }
+  }

@@ -1,0 +1,247 @@
+/* Ecosystem Partners Component Styles */
+.ecosystem-partners {
+    background-color: #0a0a0a;
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ecosystem-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Header Styles */
+  .ecosystem-header {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .ecosystem-header.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .ecosystem-title {
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .ecosystem-underline {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b5cf6, #a855f7);
+    margin: 0 auto 30px auto;
+    border-radius: 2px;
+  }
+  
+  .ecosystem-description {
+    color: #b3b3b3;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Feature Item Styles */
+  .feature-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    transition: all 1s ease-out 0.3s;
+    padding: 20px;
+  }
+  
+  .feature-wrapper.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  .feature-item {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-8px);
+  }
+  
+  .item-background {
+    position: absolute;
+    top: 25px;
+    left: -25px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 50%, #a855f7 100%);
+    /* border-radius: 25px; */
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  
+  .feature-item:hover .item-background {
+    opacity: 1;
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+  }
+  
+  .content-container1 {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    /* border-radius: 20px; */
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-item:hover .content-container1 {
+    transform: translateY(-2px);
+  }
+  
+  .display-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-item:hover .display-image {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .ecosystem-partners {
+      padding: 60px 15px;
+      min-height: auto;
+    }
+  
+    .ecosystem-title {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+  
+    .ecosystem-underline {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+  
+    .ecosystem-description {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+  
+    .ecosystem-header {
+      margin-bottom: 40px;
+    }
+  
+    .feature-item {
+      width: 320px;
+      height: 220px;
+    }
+  
+    .display-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .ecosystem-partners {
+      padding: 40px 10px;
+    }
+  
+    .ecosystem-title {
+      font-size: 1.8rem;
+    }
+  
+    .ecosystem-description {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  
+    .feature-item {
+      width: 280px;
+      height: 190px;
+    }
+  
+    .display-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  /* Animation keyframes for additional effects */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Additional hover effects */
+  .feature-item::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: -22px;
+    right: -4px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #8b5cf6, #a855f7, #c084fc, #8b5cf6);
+    border-radius: 22px;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  .feature-item:hover::before {
+    opacity: 0.4;
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

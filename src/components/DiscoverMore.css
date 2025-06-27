@@ -1,0 +1,290 @@
+/* DiscoverMore.css */
+.discover-more {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .discover-more:hover .background-image {
+    transform: scale(1.05);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 2;
+  }
+  
+  .content-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 40px;
+    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin: 0;
+    font-weight: 300;
+    max-width: 700px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0.3s;
+  }
+  
+  .cta-button {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    /* border-radius: 50px; */
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(166, 107, 255, 0.4);
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0.6s;
+  }
+  
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  .cta-button:hover::before {
+    left: 100%;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(166, 107, 255, 0.6);
+  }
+  
+  .cta-button:active {
+    transform: translateY(-1px) scale(1.02);
+  }
+  
+  /* Animation States */
+  .content.animate .headline {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounceInDown 1s ease-out forwards;
+  }
+  
+  .content.animate .description {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+  }
+  
+  .content.animate .cta-button {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: slideUpFadeIn 1s ease-out 0.6s forwards;
+  }
+  
+  /* Keyframe Animations */
+  @keyframes bounceInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px) scale(0.9);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(10px) scale(1.05);
+    }
+    80% {
+      transform: translateY(-5px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUpFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.8);
+    }
+    60% {
+      opacity: 0.8;
+      transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .headline {
+      font-size: 3rem;
+    }
+    
+    .description {
+      font-size: 1.1rem;
+    }
+    
+    .content-container {
+      max-width: 800px;
+      padding: 0 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .discover-more {
+      height: 80vh;
+      min-height: 500px;
+    }
+    
+    .content-container {
+      padding: 0 20px;
+    }
+    
+    .content {
+      gap: 25px;
+    }
+    
+    .headline {
+      font-size: 2.5rem;
+      line-height: 1.3;
+    }
+    
+    .description {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    
+    .cta-button {
+      padding: 15px 35px;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .discover-more {
+      height: 70vh;
+      min-height: 450px;
+    }
+    
+    .content-container {
+      padding: 0 15px;
+    }
+    
+    .content {
+      gap: 20px;
+    }
+    
+    .headline {
+      font-size: 2rem;
+      line-height: 1.4;
+    }
+    
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    .cta-button {
+      padding: 12px 30px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .headline {
+      font-size: 1.8rem;
+    }
+    
+    .description {
+      font-size: 0.85rem;
+    }
+    
+    .cta-button {
+      padding: 10px 25px;
+      font-size: 0.75rem;
+    }
+  }
