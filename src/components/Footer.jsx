@@ -48,7 +48,7 @@ const Footer = () => {
             <div className="logo-container">
               {!logoLoaded && <div className="logo-placeholder">VNEST</div>}
               <img 
-                src="/favicon.svg"
+                src="5c759bc3-e9de-42fa-aeaf-d6f44d6e1c85_removalai_preview.webp"
                 alt="Eduventures Logo"
                 className="footer-logo"
                 loading="lazy"

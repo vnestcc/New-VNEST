@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './OurServices.css';
 
-
-
 const OurServices = () => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -33,8 +31,6 @@ const OurServices = () => {
 
   return (
     <section ref={sectionRef} className="our-services">
-      
-      
       <div className="container">
         {/* Header */}
         <div className={`services-header ${isVisible ? 'animate-in' : ''}`}>
@@ -78,14 +74,15 @@ const OurServices = () => {
           </div>
         </div>
 
-        {/* Enhanced CTA Button */}
-        <div className={`cta-container ${isVisible ? 'animate-ripple-waves' : ''}`}>
-          <button className="view-more-btn">
-            <span className="btn-text">View More</span>
-            <div className="btn-icon">
-              <span className="arrow">→</span>
-            </div>
-          </button>
+        {/* 4th Card */}
+        <div className="fourth-card-container">
+          <div className={`service-card fourth-card ${isVisible ? 'animate-bounce-in-4' : ''}`}>
+            <div className="card-number">04</div>
+            <h3 className="card-title1">Extended Service Description</h3>
+            <p className="card-description1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ullam ut sed dolore error reiciendis, voluptate aperiam! Repudiandae vitae, eveniet voluptate earum illo error? Accusamus repellat repellendus nihil ab eos.
+            </p>
+          </div>
         </div>
       </div>
     </section>

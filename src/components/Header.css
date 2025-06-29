@@ -14,7 +14,7 @@
   z-index: 1000;
   background: rgba(31, 31, 31, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: slideDown 0.6s ease-out;
 }
@@ -30,33 +30,65 @@
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 70px;
 }
 
-/* Logo Section */
+/* Logo Section - FIXED CENTERING */
 .logo-section {
   display: flex;
   align-items: center;
+  justify-content: center; /* This centers the logo within its section */
   animation: fadeInLeft 0.8s ease-out 0.2s both;
+  flex: 0 0 auto;
+  width: 160px; /* Increased width to account for padding and border */
+  padding-right: 140px; /* Reduced padding */
+  margin-right: 20px; /* Reduced margin */
+  position: relative;
+  height: 100%;
+}
+
+.logo-section::after {
+  content: '';
+  position: absolute;
+  right: -10px; /* Positioned to be exactly between sections */
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .logo-img {
-  height: 40px;
+  height: 60px;
   width: auto;
   transition: transform 0.3s ease;
+  display: block; /* Ensures proper centering */
 }
 
 .logo-img:hover {
   transform: scale(1.05);
 }
 
-/* Navigation Menu */
+/* Navigation Menu - Centered */
 .nav-menu {
+  flex: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 32px;
   animation: fadeInRight 0.8s ease-out 0.4s both;
+  padding: 0 20px; /* Reduced padding */
+  margin-right: 20px; /* Reduced margin */
+  position: relative;
+  height: 100%;
+}
+
+.nav-menu::after {
+  content: '';
+  position: absolute;
+  right: -10px; /* Positioned to be exactly between sections */
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .nav-list {
@@ -104,21 +136,32 @@
   width: 100%;
 }
 
+/* CTA Section - FIXED CENTERING */
+.cta-section {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* This centers the button within its section */
+  animation: fadeInRight 0.8s ease-out 0.6s both;
+  flex: 0 0 auto;
+  width: 160px; /* Increased width to match logo section */
+  padding-left: 150px; /* Increased padding to push button toward center */
+}
+
 /* CTA Button */
 .cta-button1 {
   background: linear-gradient(135deg, #8b5cf6, #a855f7);
   color: white !important;
   border: none;
-  padding: 15px 20px;
-  /* border-radius: 25px; */
+  padding: 12px 20px;
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   letter-spacing: 0.5px;
+  text-align: center; /* Centers text within button */
 }
 
 .cta-button1:hover {
@@ -212,12 +255,31 @@
     display: none;
   }
 
+  .cta-section {
+    display: none;
+  }
+
   .mobile-menu-button {
     display: block;
   }
 
   .header-container {
     padding: 0 16px;
+    justify-content: space-between;
+  }
+
+  .logo-section {
+    padding-right: 0;
+    margin-right: 0;
+    width: auto; /* Allow natural width on mobile */
+  }
+
+  .logo-section::after {
+    display: none;
+  }
+
+  .nav-menu::after {
+    display: none;
   }
 
   .logo-img {
@@ -267,11 +329,6 @@ body.mobile-menu-open {
   overflow: hidden;
 }
 
-
-
-
-
-
 /* Add these styles to your existing Header.css file */
 
 .nav-button {
@@ -293,9 +350,9 @@ body.mobile-menu-open {
   transform: translateY(-1px);
 }
 
+/* Remove blue focus outline */
 .nav-button:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* Ensure mobile nav buttons have the same styling */
@@ -303,6 +360,10 @@ body.mobile-menu-open {
   width: 100%;
   text-align: left;
   display: block;
+}
+
+.mobile-nav-link.nav-button:focus {
+  outline: none;
 }
 
 /* Optional: Add smooth scroll behavior to the entire page */

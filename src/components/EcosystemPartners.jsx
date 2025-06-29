@@ -43,10 +43,10 @@ const EcosystemPartners = () => {
 
         <div className={`feature-wrapper ${isVisible ? 'animate-in' : ''}`}>
           <div className="feature-item">
-            <div className="item-background"></div>
+            {/* <div className="item-background"></div> */}
             <div className="content-container1">
               <img 
-                src="./public/Understanding.png"
+                src="Understanding.webp"
                 alt="Ecosystem Display" 
                 className="display-image"
                 loading="lazy"

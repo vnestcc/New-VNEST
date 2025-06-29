@@ -1,126 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import './Header.css'; // Import your CSS file for styling
-// import { Menu, X } from 'lucide-react';
-
-// const Header = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [isScrolled, setIsScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 20);
-//     };
-
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   const toggleMenu = () => {
-//     setIsMenuOpen(prev => !prev);
-//   };
-
-//   const closeMenu = () => {
-//     setIsMenuOpen(false);
-//   };
-
-//   return (
-//     <>
-//       <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-//         <div className="header-container">
-//           <div className="logo-section">
-//             <img 
-//               src="./favicon.svg" 
-//               alt="V-NEST Logo" 
-//               className="logo-img"
-//               loading="lazy"
-//             />
-//           </div>
-
-//           <nav className="nav-menu">
-//             <ul className="nav-list">
-//               <li className="nav-item">
-//                 <a href="#about" className="nav-link">ABOUT US</a>
-//               </li>
-//               <li className="nav-item">
-//                 <a href="#services" className="nav-link">SERVICES</a>
-//               </li>
-//               <li className="nav-item">
-//                 <a href="#faqs" className="nav-link">FAQs</a>
-//               </li>
-//               <li className="nav-item">
-//                 <a href="#contact" className="nav-link">CONTACT US</a>
-//               </li>
-//               <li className="nav-item">
-//                 <a href="#sponsors" className="nav-link">SPONSORS</a>
-//               </li>
-//             </ul>
-//             <a href="#solveathon" className="cta-button1">solveathon</a>
-//           </nav>
-
-//           <button 
-//             className="mobile-menu-button" 
-//             onClick={toggleMenu}
-//             aria-label="Toggle mobile menu"
-//           >
-//             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-//           </button>
-//         </div>
-
-//         {/* Mobile Menu */}
-//         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-//           <ul className="mobile-nav-list">
-//             <li className="mobile-nav-item">
-//               <a href="#about" className="mobile-nav-link" onClick={closeMenu}>
-//                 ABOUT US
-//               </a>
-//             </li>
-//             <li className="mobile-nav-item">
-//               <a href="#services" className="mobile-nav-link" onClick={closeMenu}>
-//                 SERVICES
-//               </a>
-//             </li>
-//             <li className="mobile-nav-item">
-//               <a href="#faqs" className="mobile-nav-link" onClick={closeMenu}>
-//                 FAQs
-//               </a>
-//             </li>
-//             <li className="mobile-nav-item">
-//               <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>
-//                 CONTACT US
-//               </a>
-//             </li>
-//             <li className="mobile-nav-item">
-//               <a href="#sponsors" className="mobile-nav-link" onClick={closeMenu}>
-//                 SPONSORS
-//               </a>
-//             </li>
-//             <li className="mobile-nav-item mobile-cta1">
-//               <a href="#solveathon" className="cta-button1" onClick={closeMenu}>
-//                 solveathon
-//               </a>
-//             </li>
-//           </ul>
-//         </div>
-//       </header>
-
-//     </>
-//   );
-// };
-
-// export default Header;
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import './Header.css'; // Import your CSS file for styling
 import { Menu, X } from 'lucide-react';
@@ -163,7 +40,7 @@ const Header = () => {
         <div className="header-container">
           <div className="logo-section">
             <img
-              src="./favicon.svg"
+              src="5c759bc3-e9de-42fa-aeaf-d6f44d6e1c85_removalai_preview.webp"
               alt="V-NEST Logo"
               className="logo-img"
               loading="lazy"
@@ -213,8 +90,11 @@ const Header = () => {
                 </button>
               </li>
             </ul>
-            <a href="https://solveathon.vnest.org/" className="cta-button1" target='_blank'>solveathon</a>
           </nav>
+
+          <div className="cta-section">
+            <a href="https://solveathon.vnest.org/" className="cta-button1" target='_blank'>SOLVEATHON</a>
+          </div>
 
           <button
             className="mobile-menu-button"
@@ -270,7 +150,7 @@ const Header = () => {
             </li>
             <li className="mobile-nav-item mobile-cta1">
               <a href="https://solveathon.vnest.org/" className="cta-button1" onClick={closeMenu}>
-                solveathon
+                SOLVEATHON
               </a>
             </li>
           </ul>
@@ -281,6 +161,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-

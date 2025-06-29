@@ -45,6 +45,7 @@
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
   background-clip: unset;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

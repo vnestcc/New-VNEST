@@ -53,7 +53,7 @@ const ContactUs = () => {
           
           <div className="student-image-container">
             <img
-              src="./public/ChatGPT Image Jun 23, 2025, 04_25_28 PM.png"
+              src="ChatGPT Image Jun 23, 2025, 04_25_28 PM.webp"
               alt="Student with backpack"
               className={`student-image ${imageLoaded ? 'loaded' : ''}`}
               loading="lazy"
