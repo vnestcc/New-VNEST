@@ -67,20 +67,23 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <button 
-                  onClick={() => scrollToSection('faqs')} 
-                  className="nav-link nav-button"
-                >
-                  FAQs
-                </button>
-              </li>
-              <li className="nav-item">
-                <button 
                   onClick={() => scrollToSection('contact')} 
                   className="nav-link nav-button"
                 >
                   CONTACT US
                 </button>
               </li>
+              <li className="nav-item">
+                <button 
+                  onClick={() => scrollToSection('faqs')} 
+                  className="nav-link nav-button"
+                >
+                  FAQs
+                </button>
+              </li>
+              
+
+           
               <li className="nav-item">
                 <button 
                   onClick={() => scrollToSection('sponsors')} 
@@ -126,20 +129,21 @@ const Header = () => {
             </li>
             <li className="mobile-nav-item">
               <button 
-                onClick={() => scrollToSection('faqs')} 
-                className="mobile-nav-link nav-button"
-              >
-                FAQs
-              </button>
-            </li>
-            <li className="mobile-nav-item">
-              <button 
                 onClick={() => scrollToSection('contact')} 
                 className="mobile-nav-link nav-button"
               >
                 CONTACT US
               </button>
             </li>
+            <li className="mobile-nav-item">
+              <button 
+                onClick={() => scrollToSection('faqs')} 
+                className="mobile-nav-link nav-button"
+              >
+                FAQs
+              </button>
+            </li>
+            
             <li className="mobile-nav-item">
               <button 
                 onClick={() => scrollToSection('sponsors')} 

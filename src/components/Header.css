@@ -41,7 +41,7 @@
   animation: fadeInLeft 0.8s ease-out 0.2s both;
   flex: 0 0 auto;
   width: 160px; /* Increased width to account for padding and border */
-  padding-right: 140px; /* Reduced padding */
+  padding-right: 160px; /* Reduced padding */
   margin-right: 20px; /* Reduced margin */
   position: relative;
   height: 100%;
