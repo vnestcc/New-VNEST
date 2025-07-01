@@ -62,19 +62,19 @@ const Footer = () => {
             <div className="contact-info">
               <div className="contact-item">
                 <MapPin size={16} className="contact-icon" />
-                <span>Bangalore, India</span>
+                <span>Vandalur–Kelambakkam Road</span>
+              </div>
+              <div className="contact-item">
+                <MapPin size={16} className="contact-icon" />
+                <span>Chennai, Tamil Nadu – 600127</span>
               </div>
               <div className="contact-item">
                 <Phone size={16} className="contact-icon" />
                 <span>+91 99019 28282</span>
               </div>
               <div className="contact-item">
-                <MapPin size={16} className="contact-icon" />
-                <span>Massachusetts, USA</span>
-              </div>
-              <div className="contact-item">
                 <Mail size={16} className="contact-icon" />
-                <span>Vnest@gmail.com</span>
+                <span>vnest@vit.ac.in</span>
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@ const Footer = () => {
         <div className={`footer-bottom ${isVisible ? 'footer-bottom-visible' : ''}`}>
           <div className="footer-bottom-left">
             <p className="copyright">
-              Copyright © 2023 VNEST, All rights reserved. Powered by VNEST Technologies.
+              Copyright © 2023 VNEST, All rights reserved. Powered by VNEST Incubator, VIT Chennai.
             </p>
             <div className="legal-links">
               <a href="#terms">Terms of Use</a>

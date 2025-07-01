@@ -44,13 +44,13 @@ const ApplyNow = () => {
         
                   <div className={`content ${isVisible ? 'content-animate' : ''}`}>
           <div className="accent-line"></div>
-          <h2 className="heading">
-            Are you ready to take the next<br />
-            step towards your future career?
+          <h2 className="heading"> 
+            Are you a student, startup founder, or researcher<br />
+            with an idea worth building?
           </h2>
-          <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br />
-            incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.
+          <p className="description"> 
+            Join the V-NEST ecosystem and take the first step toward becoming a successful entrepreneur.<br />
+            From ideation to impact, we’re here to guide you at every milestone.
           </p>
           <button className="apply-button">
             APPLY NOW

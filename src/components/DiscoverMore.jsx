@@ -49,9 +49,8 @@ const DiscoverMore = () => {
           </h2>
           
           <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-            dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            Lorem ipsum blahblah adjussm jhtu.
+            Are you a student, startup founder, or researcher with an idea worth building?
+Join the V-NEST ecosystem and take the first step toward becoming a successful entrepreneur. From ideation to impact, we’re here to guide you at every milestone.
           </p>
           
           <button className="cta-button">

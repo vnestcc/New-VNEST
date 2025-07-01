@@ -131,9 +131,9 @@ const GrowWithUs = () => {
           {/* Study With Eduventures Card */}
           <div className={`card grow-card ${isVisible ? 'animate-left' : ''}`}>
             <div className="card-content">
-              <h3 className="card-title">Study With<br />Eduventures</h3>
+              <h3 className="card-title">Our Vision</h3>
               <p className="card-description">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus voluptatibus sit nesciunt quis quae deserunt reprehenderit aperiam et, incidunt consectetur omnis optio iure modi molestiae dolor eum exercitationem rem ut!
+              To be a leading university-based startup incubator that empowers and accelerates the next generation of entrepreneurs and innovators through structured mentorship, co-creation, and cross-sector collaboration.
               </p>
               <button className="cta-button100">GET IN TOUCH</button>
             </div>
@@ -149,10 +149,13 @@ const GrowWithUs = () => {
           {/* Partner With Eduventures Card */}
           <div className={`card partner-card ${isVisible ? 'animate-right' : ''}`}>
             <div className="card-content">
-              <h3 className="card-title">Partner With<br />Eduventures</h3>
-              <p className="card-description">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus voluptatibus sit nesciunt quis quae deserunt reprehenderit aperiam et, incidunt consectetur omnis optio iure modi molestiae dolor eum exercitationem rem ut!
-              </p>
+              <h3 className="card-title">Our Mission</h3>
+              <ul className="card-description">
+                <li>Provide access to infrastructure, funding, and expert networks.</li>
+                <li>Promote entrepreneurship among students, researchers, and local communities.</li>
+                <li>Enable startups to scale through industry partnerships and global platforms.</li>
+                {/* <li>Drive impact through research-based innovation and market validation.</li> */}
+              </ul>
               <button className="cta-button120">GET IN TOUCH</button>
             </div>
             <div className="card-image">

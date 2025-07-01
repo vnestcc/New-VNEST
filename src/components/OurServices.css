@@ -295,6 +295,10 @@
   margin-top: 30px;
 }
 
+.fourth-card-container .card-description1{
+  font-size: 1.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .our-services {

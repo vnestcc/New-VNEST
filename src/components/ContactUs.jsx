@@ -64,12 +64,20 @@ const ContactUs = () => {
         
         <div className="right-section">
           <h1 className="main-heading">
-            Through creativity, collaboration and inclusion, we seek and solve problems to improve students life.
+            VNEST has signed strategic MOUs with several organizations that bring unique value to our incubatees:
           </h1>
           
-          <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          </p>
+          <ul className="description">
+            <li>Entreovert People Association</li>
+            <li>Physics Mindboggler Scientific Pvt. Ltd.</li>
+            <li>Singapore South Asia Chamber of Commerce & Industry (SSACCI)</li>
+            <li>Institute of Technology and Network Training (ITNT)</li>
+            <li>Open Weaver India Pvt. Ltd.</li>
+            <li>Tamil Nadu Apex Skill Development Centre for Logistics (TNASDCL)</li>
+            <li>Indian Overseas Bank (via CANG)</li>
+            <li>Qmax Systems India Pvt. Ltd.</li>
+          </ul>
+
           
           <button className="contact-button">
             CONTACT US

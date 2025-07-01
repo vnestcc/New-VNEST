@@ -33,8 +33,8 @@ const WhoAreWe = () => {
   const collaborationCards = [
     {
       id: 1,
-      title: 'Foreign University Collaborations',
-      description: 'Pioneering global partnerships, expanding horizons, and enriching education through foreign university collaborations.',
+      title: 'Incubation Infrastructure',
+      description: 'State-of-the-art coworking spaces, labs, and maker facilities within the VIT Chennai campus.',
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
           <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
@@ -44,8 +44,8 @@ const WhoAreWe = () => {
     },
     {
       id: 2,
-      title: 'Educational Trips Abroad',
-      description: 'Explore the world with EduVentures\' educational trips abroad. Broaden horizons, and create unforgettable experiences.',
+      title: 'Mentorship & Training',
+      description: 'Access to expert mentors from academia, industry, and global networks.',
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
@@ -55,8 +55,8 @@ const WhoAreWe = () => {
     },
     {
       id: 3,
-      title: 'Online Education Admissions',
-      description: 'EduVentures: Your gateway to hassle-free online education admissions. Unlock your academic journey today!',
+      title: 'Funding Access',
+      description: 'Seed funding up to ₹2 lakh, with credit-linkage opportunities and investor connects.',
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
@@ -79,10 +79,10 @@ const WhoAreWe = () => {
           {/* Left Content */}
           <div className="content-left">
             <h2 className="main-heading1">
-              Fostering Global Education through International Collaborations
+              V-NEST: Where Vision Meets Venture
             </h2>
             <p className="subtext">
-              At EduVentures, we specialize in facilitating international collaborations and fostering global education initiatives. Our mission is to connect institutions, universities, and students with unparalleled opportunities for growth, knowledge exchange, and .....
+              Backed by a strong academic environment and anchored in VIT’s commitment to innovation, V-NEST helps aspiring entrepreneurs turn their ideas into viable, impact-driven ventures. With a focus on sustainability, digital transformation, and industry alignment, our programs empower startups to solve real-world problems.
             </p>
             <button className="know-more-btn">KNOW MORE</button>
           </div>

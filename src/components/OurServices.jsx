@@ -34,7 +34,7 @@ const OurServices = () => {
       <div className="container">
         {/* Header */}
         <div className={`services-header ${isVisible ? 'animate-in' : ''}`}>
-          <h2 className="services-title">Our Services</h2>
+          <h2 className="services-title">Incubation Programs</h2>
           <p className="services-subtitle">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
             dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -46,30 +46,27 @@ const OurServices = () => {
           {/* Card 1 - Bounce In */}
           <div className={`service-card ${isVisible ? 'animate-bounce-in-1' : ''}`}>
             <div className="card-number">01</div>
-            <h3 className="card-title1">Foreign University Collaboration</h3>
+            <h3 className="card-title1">Early-Stage Incubation</h3>
             <p className="card-description1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              For student and faculty startups in the idea or prototype stage. Includes mentorship, coworking access, and proof-of-concept support.
             </p>
           </div>
 
           {/* Card 2 - Highlighted with Bounce In */}
           <div className={`service-card highlighted ${isVisible ? 'animate-bounce-in-2' : ''}`}>
             <div className="card-number highlighted-number">02</div>
-            <h3 className="card-title1">Educational Trips Abroad</h3>
+            <h3 className="card-title1">Accelerator Programs</h3>
             <p className="card-description1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Sector-specific tracks designed to fast-track startups toward market-readiness, funding, and scaling.
             </p>
           </div>
 
           {/* Card 3 - Bounce In */}
           <div className={`service-card ${isVisible ? 'animate-bounce-in-3' : ''}`}>
             <div className="card-number">03</div>
-            <h3 className="card-title1">Industrial Visits</h3>
+            <h3 className="card-title1">Industry Co-Incubation</h3>
             <p className="card-description1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Joint incubation with partner organizations to give startups access to specialized infrastructure, market linkages, and domain expertise.
             </p>
           </div>
         </div>
@@ -78,9 +75,9 @@ const OurServices = () => {
         <div className="fourth-card-container">
           <div className={`service-card fourth-card ${isVisible ? 'animate-bounce-in-4' : ''}`}>
             <div className="card-number">04</div>
-            <h3 className="card-title1">Extended Service Description</h3>
+            <h3 className="card-title1">Skill & Innovation Bootcamps</h3>
             <p className="card-description1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ullam ut sed dolore error reiciendis, voluptate aperiam! Repudiandae vitae, eveniet voluptate earum illo error? Accusamus repellat repellendus nihil ab eos.
+              Hands-on workshops to develop entrepreneurial mindsets, design thinking, and digital product development.
             </p>
           </div>
         </div>

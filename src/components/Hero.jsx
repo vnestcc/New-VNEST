@@ -29,18 +29,18 @@ const Hero = () => {
         />
         <div className="background-overlay"></div>
       </div>
-
+  
       <div className="hero-container">
         {/* Left Content */}
         <div className={`hero-content ${isVisible ? 'fade-in' : ''}`}>
           <h1 className="hero-title">
-            <span className="title-line">WELCOME TO OUR</span>
-            <span className="title-line">GLOBAL</span>
-            <span className="title-line title-innovation">INNOVATION HUB</span>
+            <span className="title-line">Empowering</span>
+            <span className="title-line">Next-Gen Innovators</span>
+            <span className="title-line title-innovation">at VIT Chennai</span>
           </h1>
 
           <p className="hero-subtitle">
-            Unleashing Boundless Opportunities for International collaboration
+            VNEST is the dedicated startup incubator of VIT Chennai, providing an integrated ecosystem to transform ideas into scalable ventures.
           </p>
 
           <button 

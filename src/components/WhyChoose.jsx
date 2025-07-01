@@ -285,33 +285,33 @@ const WhyChoose = () => {
   const features = [
     {
       icon: 'convenience',
-      title: 'Convenience',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
+      title: 'Product development guidance',
+      description: 'Expert support to refine and build your startup\'s product efficiently.'
     },
     {
       icon: 'quality',
-      title: 'Quality',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
+      title: 'Investor readiness',
+      description: 'Help preparing compelling pitches and validating proposals for investors.'
     },
     {
       icon: 'global',
-      title: 'Global',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
+      title: 'Tech platform access',
+      description: 'Free or discounted access to cutting-edge development tools and platforms.'
     },
     {
       icon: 'expertise',
-      title: 'Expertise',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
+      title: 'Get revenue-based funding models',
+      description: 'Flexible funding options that grow with your startup’s earnings.'
     },
     {
       icon: 'support',
-      title: 'Support',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
+      title: 'To engage in research-backed entrepreneurship',
+      description: 'Leverage academic research to create innovative, market-ready solutions.'
     },
     {
       icon: 'certified',
-      title: 'Certified',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
+      title: 'Collaboration with VIT faculty and partner ecosystems',
+      description: 'Network and collaborate with a vibrant community of mentors and experts.'
     }
   ];
 
@@ -320,7 +320,7 @@ const WhyChoose = () => {
       <div className={`why-choose-content ${isVisible ? 'animate-in' : ''}`}>
         <div className="why-choose-header">
           <h2 className="main-title">Why choose V-NEST</h2>
-          <p className="subtitle">Education beyond boundaries</p>
+          <p className="subtitle">Key Startup Benefits</p>
           <div className="title-underline">
             <div className="underline-part-1"></div>
             <div className="underline-part-2"></div>

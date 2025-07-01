@@ -95,7 +95,7 @@ function App() {
         <ContactUs/>
       </section>
       <WhyChoose/>
-      <DiscoverMore/>
+      {/* <DiscoverMore/> */}
       <StepToApply/>
       <Alumni/>
       <section id="faqs">
