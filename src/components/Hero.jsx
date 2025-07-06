@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
 
-const Hero = () => {
+const Hero = ({ onGoToApplication }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -14,8 +14,9 @@ const Hero = () => {
   }, []);
 
   const handleApplyClick = () => {
-    console.log('Apply Now clicked');
-    // Add your application logic here
+    if (onGoToApplication) {
+      onGoToApplication();
+    }
   };
 
   return (

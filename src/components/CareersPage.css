@@ -1,0 +1,74 @@
+/* Careers Page Styles */
+.careers-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.careers-page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(31, 31, 31, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 0;
+}
+
+.careers-page-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.back-to-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.back-to-main:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
+
+.careers-main {
+  display: block;
+  overflow-x: hidden;
+}
+
+/* Adjust careers section for the fixed header */
+.careers-page .careers-section {
+  padding-top: 80px; /* Account for fixed header */
+  margin: 0;
+  min-height: calc(100vh - 70px);
+  padding-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .careers-page-nav {
+    padding: 0 16px;
+  }
+  
+  .back-to-main {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .careers-page .careers-section {
+    padding-top: 70px;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './StepToApply.css';
 
-const StepToApply = () => {
+const StepToApply = ({ onGoToApplication }) => {
   const [visibleSteps, setVisibleSteps] = useState([]);
   const [buttonVisible, setButtonVisible] = useState(false);
   const stepRefs = useRef([]);
@@ -101,8 +101,8 @@ const StepToApply = () => {
         </div>
         
         <div className={`button-container ${buttonVisible ? 'visible' : ''}`}>
-          <button className="application-button">
-            APPLICATION FORM
+          <button className="application-button" onClick={onGoToApplication}>
+            START APPLICATION
             <span className="arrow">→</span>
           </button>
         </div>

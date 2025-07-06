@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ApplyNow.css';
 
-const ApplyNow = () => {
+const ApplyNow = ({ onGoToApplication }) => {
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
 
@@ -52,7 +52,7 @@ const ApplyNow = () => {
             Join the V-NEST ecosystem and take the first step toward becoming a successful entrepreneur.<br />
             From ideation to impact, we’re here to guide you at every milestone.
           </p>
-          <button className="apply-button">
+          <button className="apply-button" onClick={onGoToApplication}>
             APPLY NOW
             <svg className="button-arrow" width="20" height="12" viewBox="0 0 20 12" fill="none">
               <path d="M14 1L19 6L14 11M19 6H1" stroke="currentColor" strokeWidth="2"/>
