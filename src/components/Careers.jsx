@@ -1,18 +1,44 @@
-import React from 'react';
-import { MapPin, Clock, DollarSign, Users, Briefcase } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { MapPin, Clock, DollarSign, Users, Briefcase, Home } from 'lucide-react';
 import './Careers.css';
 
-const Careers = () => {
+const Careers = ({ onJobClick }) => {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => {
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
+      }
+    };
+  }, []);
+
   const jobListings = [
     {
       id: 1,
       title: "Full Stack Developer",
       department: "Engineering",
       location: "Mumbai, India",
-      type: "Full-time",
-      experience: "2-4 years",
-      salary: "₹8-15 LPA",
-      description: "We are looking for a passionate Full Stack Developer to join our growing team. You'll work on building scalable web applications using modern technologies and contribute to our mission of fostering innovation in the startup ecosystem.",
+      type: "Full-Time",
+      experience: "2-4 Years",
+      salary: "8-15 LPA",
+      workType: "On-Site",
+      description: "Work on building scalable, user-friendly web applications and contribute to our mission of empowering startups through technology.",
       requirements: [
         "Bachelor's degree in Computer Science or related field",
         "Strong experience with React.js, Node.js, and MongoDB",
@@ -32,11 +58,12 @@ const Careers = () => {
       id: 2,
       title: "Product Manager",
       department: "Product",
-      location: "Bangalore, India",
-      type: "Full-time",
-      experience: "3-6 years",
-      salary: "₹15-25 LPA",
-      description: "Join us as a Product Manager to drive the strategic direction of our platform. You'll work closely with engineering, design, and business teams to deliver products that empower startups and entrepreneurs.",
+      location: "Banglore, India",
+      type: "Full-Time",
+      experience: "3-6 Years",
+      salary: "15-25 LPA",
+      workType: "On-Site",
+      description: "Drive the strategic direction of our platform. Work closely with engineering, design, and business teams to deliver products that empower startups.",
       requirements: [
         "Bachelor's degree in Business, Engineering, or related field",
         "3+ years of product management experience",
@@ -54,13 +81,14 @@ const Careers = () => {
     },
     {
       id: 3,
-      title: "UX/UI Designer",
+      title: "UI/UX Designer",
       department: "Design",
-      location: "Remote",
-      type: "Full-time",
-      experience: "2-5 years",
-      salary: "₹6-12 LPA",
-      description: "We're seeking a creative UX/UI Designer to enhance user experience across our platform. You'll be responsible for creating intuitive, beautiful interfaces that help startups succeed.",
+      location: "Pune, India",
+      type: "Full-Time",
+      experience: "2-5 Years",
+      salary: "6-12 LPA",
+      workType: "Remote",
+      description: "Enhance user experience across our platform. You'll be responsible for creating intuitive, beautiful interfaces that help startups succeed.",
       requirements: [
         "Bachelor's degree in Design, HCI, or related field",
         "Strong portfolio showcasing UX/UI design work",
@@ -84,8 +112,7 @@ const Careers = () => {
         <div className="careers-header">
           <h2>Join Our Team</h2>
           <p>
-            Build the future of entrepreneurship with us. We're looking for passionate individuals 
-            who want to make a difference in the startup ecosystem.
+            Build The Future Of Entrepreneurship With Us. We're Looking For Passionate Individuals Who Want To Make A Difference In The Startup Ecosystem.
           </p>
         </div>
 
@@ -116,7 +143,7 @@ const Careers = () => {
               <div key={job.id} className="job-card">
                 <div className="job-header">
                   <h4>{job.title}</h4>
-                  <span className="department-badge">{job.department}</span>
+                  <span className="department-badge">{job.department.toUpperCase()}</span>
                 </div>
                 
                 <div className="job-meta">
@@ -136,38 +163,19 @@ const Careers = () => {
                     <DollarSign size={16} />
                     <span>{job.salary}</span>
                   </div>
+                  <div className="meta-item">
+                    <Home size={16} />
+                    <span>{job.workType}</span>
+                  </div>
                 </div>
 
                 <div className="job-description">
                   <p>{job.description}</p>
                 </div>
 
-                <div className="job-details">
-                  <div className="requirements">
-                    <h5>Requirements:</h5>
-                    <ul>
-                      {job.requirements.map((req, index) => (
-                        <li key={index}>{req}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="responsibilities">
-                    <h5>Responsibilities:</h5>
-                    <ul>
-                      {job.responsibilities.map((resp, index) => (
-                        <li key={index}>{resp}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
                 <div className="job-actions">
-                  <button className="apply-btn">
-                    Apply Now
-                  </button>
-                  <button className="save-btn">
-                    Save Job
+                  <button className="apply-btn" onClick={() => onJobClick(job)}>
+                    KNOW MORE
                   </button>
                 </div>
               </div>
@@ -176,14 +184,13 @@ const Careers = () => {
         </div>
 
         <div className="careers-footer1">
-          <div className="footer-content1">
-            <h3>Don't see the right role?</h3>
+          <div className="footer-content1" ref={footerRef}>
+            <h3>Don't See The Right Role?</h3>
             <p>
-              We're always looking for talented individuals. Send us your resume and 
-              we'll keep you in mind for future opportunities.
+              We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
             </p>
             <button className="contact-btn1">
-              Send Your Resume
+              SEND YOUR RESUME
             </button>
           </div>
         </div>

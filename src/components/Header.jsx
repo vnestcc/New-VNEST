@@ -138,9 +138,7 @@ const Header = ({ onGoToApplication, onGoToAdmin, onGoToCareers }) => {
           <div className="cta-section">
             <a href="https://solveathon.vnest.org/" className="cta-button1" target='_blank'>SOLVEATHON</a>
             
-            {!isAuthenticated() ? (
-              <button onClick={onGoToApplication} className="cta-button1">LOGIN</button>
-            ) : (
+            {isAuthenticated() && (
               <div className="user-menu-container">
                 <button 
                   className="user-avatar"
@@ -265,13 +263,7 @@ const Header = ({ onGoToApplication, onGoToAdmin, onGoToCareers }) => {
             </li>
             
             {/* User Menu in Mobile */}
-            {!isAuthenticated() ? (
-              <li className="mobile-nav-item mobile-cta1">
-                <button onClick={() => { onGoToApplication(); closeMenu(); }} className="cta-button1">
-                  LOGIN
-                </button>
-              </li>
-            ) : (
+            {isAuthenticated() && (
               <>
                 <li className="mobile-nav-item">
                   <div className="mobile-user-info">

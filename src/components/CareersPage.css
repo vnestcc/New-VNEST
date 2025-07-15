@@ -1,7 +1,7 @@
 /* Careers Page Styles */
 .careers-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: #1a1a1a;
 }
 
 .careers-page-header {
@@ -27,11 +27,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: #8b5cf6;
   color: white;
   border: none;
   padding: 12px 20px;
-  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
@@ -41,8 +40,9 @@
 }
 
 .back-to-main:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: #7c3aed;
   transform: translateX(-2px);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
 }
 
 .careers-main {
