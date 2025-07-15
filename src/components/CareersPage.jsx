@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import Careers from './Careers';
 import JobModal from './JobModal';
@@ -7,6 +7,15 @@ import './CareersPage.css';
 const CareersPage = ({ onGoBack }) => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
 
   const handleJobClick = (job) => {
     setSelectedJob(job);

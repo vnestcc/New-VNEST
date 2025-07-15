@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import LandingPage from './LandingPage';
 import ApplicationDashboard from './ApplicationDashboard';
@@ -12,6 +12,15 @@ const Router = () => {
   const [currentPage, setCurrentPage] = useState('landing');
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
+
+  // Scroll to top when page changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [currentPage]);
 
   // Navigation functions
   const goToLanding = () => setCurrentPage('landing');
