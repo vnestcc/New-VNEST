@@ -1,9 +1,10 @@
-const { Pool } = require('pg');
-const dotenv = require('dotenv');
+const { Pool } = require("pg");
+const fs = require("fs");
+const path = require("path");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
-// Create a connection pool to PostgreSQL
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -12,14 +13,20 @@ const pool = new Pool({
   port: process.env.DB_PORT || 5432,
 });
 
-// Test the connection
-pool.query('SELECT NOW()', (err, res) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-  } else {
-    console.log('Database connected successfully at:', res.rows[0].now);
+const initDb = async () => {
+  try {
+    const sql = fs
+      .readFileSync(path.join(__dirname, "server/init.sql"))
+      .toString();
+    await pool.query(sql);
+    console.log("Database schema initialized.");
+  } catch (err) {
+    console.error("Error initializing database schema:", err);
   }
-});
+};
+
+// Run migration on startup
+initDb();
 
 module.exports = {
   query: (text, params) => pool.query(text, params),
