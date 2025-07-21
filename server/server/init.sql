@@ -32,3 +32,11 @@ CREATE TABLE IF NOT EXISTS pitches (
   status VARCHAR(20) DEFAULT 'scheduled', -- scheduled | completed | cancelled
   created_at TIMESTAMP DEFAULT NOW()
 );
+
+-- Insert admin user if not exists
+-- Password is 'admin123' hashed with bcrypt
+INSERT INTO users (name, email, password, role) 
+SELECT 'Admin User', 'admin@vnest.com', '$2a$10$3tNA4R1ZqDhSGO.W0JrYD.2pmZRqlx4FinhOuc.twGShJG3WjZKr.', 'admin'
+WHERE NOT EXISTS (
+  SELECT 1 FROM users WHERE email = 'admin@vnest.com'
+);
