@@ -25,9 +25,13 @@ if (process.env.NODE_ENV !== "production") {
 
 // Routes
 app.use("/api/forms", formRoutes);
+app.use("/api/careers", require("./routes/careersRoutes"));
 
 // Auth routes (no token required)
 app.use("/api/auth", require("./routes/authRoutes"));
+
+// Public webhook for Admin Portal status updates (no auth required)
+app.post("/api/webhook/status-update", require("./controllers/adminController").handleStatusUpdate);
 
 // Admin routes (with admin middleware)
 app.use(

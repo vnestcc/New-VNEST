@@ -281,4 +281,50 @@ router.patch("/pitches/:id", adminController.updatePitchStatus);
  */
 router.get("/users", adminController.getAllUsers);
 
+/**
+ * @swagger
+ * /api/admin/status-update:
+ *   post:
+ *     summary: Receive status updates from Admin Portal
+ *     tags: [Admin]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - submissionId
+ *               - userId
+ *               - type
+ *               - status
+ *             properties:
+ *               submissionId:
+ *                 type: integer
+ *               userId:
+ *                 type: integer
+ *               type:
+ *                 type: string
+ *                 enum: [abstract, details, pitch]
+ *               status:
+ *                 type: string
+ *                 enum: [approved, rejected]
+ *               reason:
+ *                 type: string
+ *               updatedAt:
+ *                 type: string
+ *                 format: date-time
+ *     responses:
+ *       200:
+ *         description: Status update processed successfully
+ *       400:
+ *         description: Invalid request format
+ *       404:
+ *         description: Submission not found
+ *       500:
+ *         description: Server error
+ */
+// Keep the authenticated version for internal use
+router.post("/status-update", adminController.handleStatusUpdate);
+
 module.exports = router;

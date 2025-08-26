@@ -1,5 +1,5 @@
 // API base URL - adjust this based on your backend deployment
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://localhost:3000/api';
 
 // API configuration
 const API_CONFIG = {

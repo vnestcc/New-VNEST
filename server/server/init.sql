@@ -12,7 +12,8 @@ CREATE TABLE IF NOT EXISTS ideas (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   abstract TEXT NOT NULL,
   status VARCHAR(20) DEFAULT 'pending', -- pending | approved | rejected
-  created_at TIMESTAMP DEFAULT NOW()
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE IF NOT EXISTS details (
@@ -21,7 +22,8 @@ CREATE TABLE IF NOT EXISTS details (
   full_description TEXT NOT NULL,
   documents_url TEXT,
   status VARCHAR(20) DEFAULT 'pending', -- pending | approved | rejected
-  created_at TIMESTAMP DEFAULT NOW()
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE IF NOT EXISTS pitches (
@@ -30,8 +32,14 @@ CREATE TABLE IF NOT EXISTS pitches (
   scheduled_date TIMESTAMP NOT NULL,
   notes TEXT,
   status VARCHAR(20) DEFAULT 'scheduled', -- scheduled | completed | cancelled
-  created_at TIMESTAMP DEFAULT NOW()
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
 );
+
+-- Add updated_at column to existing tables if they don't exist
+ALTER TABLE ideas ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP DEFAULT NOW();
+ALTER TABLE details ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP DEFAULT NOW();
+ALTER TABLE pitches ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP DEFAULT NOW();
 
 -- Insert admin user if not exists
 -- Password is 'admin123' hashed with bcrypt
