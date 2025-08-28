@@ -1,6 +1,7 @@
 const db = require('../db');
+const adminPortalService = require('../services/adminPortalService');
 
-// Step 1: Submit idea abstract
+// Submit abstract
 const submitAbstract = async (req, res) => {
   try {
     const { abstract } = req.body;
@@ -23,11 +24,33 @@ const submitAbstract = async (req, res) => {
       });
     }
 
+    // Get user details for submission
+    const user = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
+    
     // Create new abstract with 'pending' status
     const newAbstract = await db.query(
       'INSERT INTO ideas (user_id, abstract, status, created_at) VALUES ($1, $2, $3, NOW()) RETURNING *',
       [userId, abstract, 'pending']
     );
+
+    // Send to Admin Portal
+    const submissionData = {
+      submissionId: newAbstract.rows[0].id,
+      userId: userId,
+      userName: user.rows[0].name,
+      userEmail: user.rows[0].email,
+      type: 'abstract',
+      content: {
+        abstract: abstract
+      },
+      status: 'pending',
+      submittedAt: new Date().toISOString()
+    };
+
+    const adminPortalResult = await adminPortalService.sendSubmission(submissionData);
+    if (!adminPortalResult.success) {
+      console.warn('Failed to sync with Admin Portal:', adminPortalResult.error);
+    }
 
     res.status(201).json({
       message: 'Abstract submitted successfully. It is now pending review.',
@@ -104,6 +127,29 @@ const submitDetails = async (req, res) => {
       [userId, full_description, documents_url || null, 'pending']
     );
 
+    // Get user details for submission
+    const user = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
+    
+    // Send to Admin Portal
+    const submissionData = {
+      submissionId: newDetails.rows[0].id,
+      userId: userId,
+      userName: user.rows[0].name,
+      userEmail: user.rows[0].email,
+      type: 'details',
+      content: {
+        full_description: full_description,
+        documents_url: documents_url || null
+      },
+      status: 'pending',
+      submittedAt: new Date().toISOString()
+    };
+
+    const adminPortalResult = await adminPortalService.sendSubmission(submissionData);
+    if (!adminPortalResult.success) {
+      console.warn('Failed to sync with Admin Portal:', adminPortalResult.error);
+    }
+
     res.status(201).json({
       message: 'Detailed information submitted successfully. It is now pending review.',
       details: newDetails.rows[0]
@@ -178,6 +224,29 @@ const schedulePitch = async (req, res) => {
       'INSERT INTO pitches (user_id, scheduled_date, notes, status) VALUES ($1, $2, $3, $4) RETURNING *',
       [userId, scheduled_date, notes || null, 'scheduled']
     );
+
+    // Get user details for submission
+    const user = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
+    
+    // Send to Admin Portal
+    const submissionData = {
+      submissionId: newPitch.rows[0].id,
+      userId: userId,
+      userName: user.rows[0].name,
+      userEmail: user.rows[0].email,
+      type: 'pitch',
+      content: {
+        scheduled_date: scheduled_date,
+        notes: notes || null
+      },
+      status: 'scheduled',
+      submittedAt: new Date().toISOString()
+    };
+
+    const adminPortalResult = await adminPortalService.sendSubmission(submissionData);
+    if (!adminPortalResult.success) {
+      console.warn('Failed to sync with Admin Portal:', adminPortalResult.error);
+    }
 
     res.status(201).json({
       message: 'Pitch scheduled successfully.',

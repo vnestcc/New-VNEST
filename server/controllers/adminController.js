@@ -184,6 +184,112 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+// Handle status updates from Admin Portal
+const handleStatusUpdate = async (req, res) => {
+  try {
+    const { submissionId, userId, type, status, reason, updatedAt } = req.body;
+
+    // Validate required fields
+    if (!submissionId || !userId || !type || !status) {
+      return res.status(400).json({ 
+        message: 'Missing required fields: submissionId, userId, type, status' 
+      });
+    }
+
+    // Validate type
+    if (!['abstract', 'details', 'pitch'].includes(type)) {
+      return res.status(400).json({ 
+        message: 'Invalid type. Must be abstract, details, or pitch' 
+      });
+    }
+
+    // Validate status
+    if (!['approved', 'rejected'].includes(status)) {
+      return res.status(400).json({ 
+        message: 'Invalid status. Must be approved or rejected' 
+      });
+    }
+
+    let updateResult;
+    let tableName;
+    let recordId;
+
+    // Update the appropriate table based on type
+    switch (type) {
+      case 'abstract':
+        tableName = 'ideas';
+        // Find the record by submissionId (which corresponds to the id in ideas table)
+        const abstractCheck = await db.query('SELECT * FROM ideas WHERE id = $1 AND user_id = $2', [submissionId, userId]);
+        if (abstractCheck.rows.length === 0) {
+          return res.status(404).json({ message: 'Abstract submission not found' });
+        }
+        recordId = submissionId;
+        updateResult = await db.query(
+          'UPDATE ideas SET status = $1, updated_at = NOW() WHERE id = $2 AND user_id = $3 RETURNING *',
+          [status, recordId, userId]
+        );
+        break;
+
+      case 'details':
+        tableName = 'details';
+        // Find the details record by user_id (since details are linked to user, not submission id)
+        const detailsCheck = await db.query('SELECT * FROM details WHERE user_id = $1', [userId]);
+        if (detailsCheck.rows.length === 0) {
+          return res.status(404).json({ message: 'Details submission not found' });
+        }
+        recordId = detailsCheck.rows[0].id;
+        updateResult = await db.query(
+          'UPDATE details SET status = $1, updated_at = NOW() WHERE user_id = $2 RETURNING *',
+          [status, userId]
+        );
+        break;
+
+      case 'pitch':
+        tableName = 'pitches';
+        // Find the pitch record by user_id
+        const pitchCheck = await db.query('SELECT * FROM pitches WHERE user_id = $1', [userId]);
+        if (pitchCheck.rows.length === 0) {
+          return res.status(404).json({ message: 'Pitch submission not found' });
+        }
+        recordId = pitchCheck.rows[0].id;
+        // For pitches, map approved/rejected to completed/cancelled
+        const pitchStatus = status === 'approved' ? 'completed' : 'cancelled';
+        updateResult = await db.query(
+          'UPDATE pitches SET status = $1, updated_at = NOW() WHERE user_id = $2 RETURNING *',
+          [pitchStatus, userId]
+        );
+        break;
+
+      default:
+        return res.status(400).json({ message: 'Invalid submission type' });
+    }
+
+    if (updateResult.rows.length === 0) {
+      return res.status(404).json({ message: `${type} submission not found` });
+    }
+
+    console.log(`Status update received from Admin Portal:`, {
+      submissionId,
+      userId,
+      type,
+      status,
+      reason,
+      tableName,
+      recordId
+    });
+
+    res.status(200).json({
+      message: `${type} status updated to ${status} successfully`,
+      updatedRecord: updateResult.rows[0],
+      reason: reason || null
+    });
+
+  } catch (error) {
+    console.error('Handle status update error:', error);
+    res.status(500).json({ message: 'Server error while processing status update' });
+  }
+};
+
 module.exports = {
   getAllAbstracts,
   getAllDetails,
@@ -191,5 +297,6 @@ module.exports = {
   updateAbstractStatus,
   updateDetailsStatus,
   updatePitchStatus,
-  getAllUsers
+  getAllUsers,
+  handleStatusUpdate
 };

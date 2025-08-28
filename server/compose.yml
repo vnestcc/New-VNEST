@@ -6,11 +6,11 @@ services:
       POSTGRES_PASSWORD: vnest
       POSTGRES_DB: incubation-backend
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U test"]
+      test: ["CMD-SHELL", "pg_isready -U vnest"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -20,12 +20,17 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "3000:8080"
     env_file: .env
+    environment:
+      - ADMIN_PORTAL_API=http://host.docker.internal:8081/api
+      - ADMIN_PORTAL_API_KEY=vnest-integration-key
     depends_on:
       database:
         condition: service_healthy
     restart: on-failure
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   pg_data:

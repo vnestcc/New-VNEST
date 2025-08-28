@@ -1,9 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Clock, DollarSign, Users, Briefcase, Home } from 'lucide-react';
 import './Careers.css';
 
 const Careers = ({ onJobClick }) => {
   const footerRef = useRef(null);
+  const [jobListings, setJobListings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,83 +31,49 @@ const Careers = ({ onJobClick }) => {
     };
   }, []);
 
-  const jobListings = [
-    {
-      id: 1,
-      title: "Full Stack Developer",
-      department: "Engineering",
-      location: "Mumbai, India",
-      type: "Full-Time",
-      experience: "2-4 Years",
-      salary: "8-15 LPA",
-      workType: "On-Site",
-      description: "Work on building scalable, user-friendly web applications and contribute to our mission of empowering startups through technology.",
-      requirements: [
-        "Bachelor's degree in Computer Science or related field",
-        "Strong experience with React.js, Node.js, and MongoDB",
-        "Experience with RESTful APIs and microservices",
-        "Knowledge of cloud platforms (AWS/Azure)",
-        "Strong problem-solving skills and attention to detail"
-      ],
-      responsibilities: [
-        "Develop and maintain web applications using React and Node.js",
-        "Design and implement RESTful APIs",
-        "Collaborate with UI/UX designers to implement responsive designs",
-        "Write clean, maintainable, and efficient code",
-        "Participate in code reviews and team meetings"
-      ]
-    },
-    {
-      id: 2,
-      title: "Product Manager",
-      department: "Product",
-      location: "Banglore, India",
-      type: "Full-Time",
-      experience: "3-6 Years",
-      salary: "15-25 LPA",
-      workType: "On-Site",
-      description: "Drive the strategic direction of our platform. Work closely with engineering, design, and business teams to deliver products that empower startups.",
-      requirements: [
-        "Bachelor's degree in Business, Engineering, or related field",
-        "3+ years of product management experience",
-        "Experience with product analytics tools",
-        "Strong analytical and problem-solving skills",
-        "Excellent communication and leadership abilities"
-      ],
-      responsibilities: [
-        "Define product roadmap and strategy",
-        "Gather and analyze user feedback and requirements",
-        "Work with cross-functional teams to deliver features",
-        "Monitor product metrics and user engagement",
-        "Conduct market research and competitive analysis"
-      ]
-    },
-    {
-      id: 3,
-      title: "UI/UX Designer",
-      department: "Design",
-      location: "Pune, India",
-      type: "Full-Time",
-      experience: "2-5 Years",
-      salary: "6-12 LPA",
-      workType: "Remote",
-      description: "Enhance user experience across our platform. You'll be responsible for creating intuitive, beautiful interfaces that help startups succeed.",
-      requirements: [
-        "Bachelor's degree in Design, HCI, or related field",
-        "Strong portfolio showcasing UX/UI design work",
-        "Proficiency in Figma, Sketch, or Adobe Creative Suite",
-        "Understanding of design systems and accessibility",
-        "Experience with user research and testing"
-      ],
-      responsibilities: [
-        "Design user interfaces for web and mobile applications",
-        "Conduct user research and usability testing",
-        "Create wireframes, prototypes, and design systems",
-        "Collaborate with developers to ensure design implementation",
-        "Stay updated with design trends and best practices"
-      ]
-    }
-  ];
+  // Fetch jobs from API
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/careers/jobs');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch jobs');
+        }
+        
+        const data = await response.json();
+        
+        // Map API data to component format
+        const mappedJobs = data.jobs.map(job => ({
+          id: job.id,
+          title: job.title,
+          department: job.department || job.type || 'General',
+          location: job.location || 'Remote',
+          type: job.type || 'Full-Time',
+          experience: job.experience || 'As per requirement',
+          salary: job.salary || 'Competitive',
+          workType: job.workType || 'Hybrid',
+          description: job.description,
+          requirements: job.requirements ? job.requirements.split('\n').filter(req => req.trim()) : [],
+          responsibilities: job.responsibilities ? job.responsibilities.split('\n').filter(resp => resp.trim()) : []
+        }));
+        
+        setJobListings(mappedJobs);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching jobs:', err);
+        setError('Failed to load job listings');
+        // Fallback to empty array if API fails
+        setJobListings([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
 
   return (
     <div className="careers-section" id="careers">
@@ -138,13 +107,26 @@ const Careers = ({ onJobClick }) => {
 
         <div className="jobs-section">
           <h3>Open Positions</h3>
-          <div className="jobs-grid">
-            {jobListings.map((job) => (
-              <div key={job.id} className="job-card">
-                <div className="job-header">
-                  <h4>{job.title}</h4>
-                  <span className="department-badge">{job.department.toUpperCase()}</span>
-                </div>
+          {loading ? (
+            <div className="loading-state">
+              <p>Loading job listings...</p>
+            </div>
+          ) : error ? (
+            <div className="error-state">
+              <p>{error}</p>
+            </div>
+          ) : jobListings.length === 0 ? (
+            <div className="empty-state">
+              <p>No job openings available at the moment. Please check back later!</p>
+            </div>
+          ) : (
+            <div className="jobs-grid">
+              {jobListings.map((job) => (
+                <div key={job.id} className="job-card">
+                  <div className="job-header">
+                    <h4>{job.title}</h4>
+                    <span className="department-badge">{job.department.toUpperCase()}</span>
+                  </div>
                 
                 <div className="job-meta">
                   <div className="meta-item">
@@ -181,6 +163,7 @@ const Careers = ({ onJobClick }) => {
               </div>
             ))}
           </div>
+          )}
         </div>
 
         <div className="careers-footer1">
