@@ -82,7 +82,7 @@ const Footer = () => {
           {/* Links Sections Container for Mobile */}
           <div className="footer-links-container">
             {/* Locations Section */}
-            <div className="footer-section">
+            {/* <div className="footer-section">
               <h3 className="section-title1">Locations</h3>
               <ul className="footer-links">
                 <li><a href="#usa">USA</a></li>
@@ -91,7 +91,7 @@ const Footer = () => {
                 <li><a href="#italy">Italy</a></li>
                 <li><a href="#france">France</a></li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Helpful Links Section */}
             <div className="footer-section">
@@ -120,7 +120,7 @@ const Footer = () => {
         <div className={`footer-bottom ${isVisible ? 'footer-bottom-visible' : ''}`}>
           <div className="footer-bottom-left">
             <p className="copyright">
-              Copyright © 2023 VNEST, All rights reserved. Powered by VNEST Incubator, VIT Chennai.
+              Copyright © 2023 VNEST VIT Chennai Startup Incubator, All rights reserved. Powered by VNEST Incubator, VIT Chennai.
             </p>
             <div className="legal-links">
               <a href="#terms">Terms of Use</a>

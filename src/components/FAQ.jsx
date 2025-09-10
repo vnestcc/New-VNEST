@@ -8,25 +8,25 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: "WHAT IS THE INSTITUTION'S ROLE IN THE ADMISSIONS PROCESS TO FOREIGN UNIVERSITIES?",
-      answer: "The Institution acts as a facilitator in the admissions process, and students can apply to the foreign universities through the Institution. The Institution will guide students through the application process and help them prepare the required documents for admissions."
+      question: "WHO CAN APPLY TO V-NEST?",
+      answer: "Anyone with a voable startup idea or early-stage startup can apply."
     },
     {
-      question: "CAN I APPLY DIRECTLY TO THE FOREIGN UNIVERSITIES ?",
-      answer: "Yes, you can apply directly to foreign universities. However, going through the Institution provides additional support and guidance throughout the application process."
+      question: "WHAT KIND OF SUPPORT DOES V-NEST OFFER?",
+      answer: "V-NEST offers mentorship, funding access, workspace and networking."
     },
     {
-      question: "WHAT ARE THE ELIGIBILITY CRITERIA FOR ADMISSION TO FOREIGN UNIVERSITIES THROUGH THE INSTITUTION ?",
-      answer: "Eligibility criteria vary by university and program. Generally, you need to meet academic requirements, language proficiency standards, and provide necessary documentation as specified by each institution."
+      question: "IS THERE ANY FEE TO INCUBATE A STARTUP AT V-NEST?",
+      answer: "No, incubation at V-NEST is free of charge."
     },
     {
-      question: "WHAT IS THE APPLICATION DEADLINE FOR FOREIGN UNIVERSITIES ?",
-      answer: "Application deadlines vary by university and program. Most universities have multiple intake periods throughout the year. We recommend checking with specific institutions for their exact deadlines."
+      question: "HOW DO I APPLY TO V-NEST?",
+      answer: "You can apply online via the V-NEST website by filling out the application form."
     },
-    {
-      question: "WHAT IS THE DURATION OF THE PROGRAMS OFFERED BY FOREIGN UNIVERSITIES ?",
-      answer: "Program duration varies depending on the level of study. Undergraduate programs typically range from 3-4 years, master's programs from 1-2 years, and doctoral programs from 3-5 years."
-    }
+    // {
+    //   question: "WHAT IS THE DURATION OF THE PROGRAMS OFFERED BY FOREIGN UNIVERSITIES ?",
+    //   answer: "Program duration varies depending on the level of study. Undergraduate programs typically range from 3-4 years, master's programs from 1-2 years, and doctoral programs from 3-5 years."
+    // }
   ];
 
   useEffect(() => {

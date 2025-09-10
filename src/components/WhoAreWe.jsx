@@ -79,7 +79,7 @@ const WhoAreWe = () => {
           {/* Left Content */}
           <div className="content-left">
             <h2 className="main-heading1">
-              V-NEST: Where Vision Meets Venture
+              V-NEST:  A place to learn, A chance to grow 
             </h2>
             <p className="subtext">
               Backed by a strong academic environment and anchored in VIT’s commitment to innovation, V-NEST helps aspiring entrepreneurs turn their ideas into viable, impact-driven ventures. With a focus on sustainability, digital transformation, and industry alignment, our programs empower startups to solve real-world problems.

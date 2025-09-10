@@ -133,7 +133,7 @@ const GrowWithUs = () => {
             <div className="card-content">
               <h3 className="card-title">Our Vision</h3>
               <p className="card-description">
-              To be a leading university-based startup incubator that empowers and accelerates the next generation of entrepreneurs and innovators through structured mentorship, co-creation, and cross-sector collaboration.
+              To be a leading hub of innovation and entrepreneurship, empowering transformative ideas to become market-leading solutions with global impact.
               </p>
               <button className="cta-button100">GET IN TOUCH</button>
             </div>
@@ -151,9 +151,9 @@ const GrowWithUs = () => {
             <div className="card-content">
               <h3 className="card-title">Our Mission</h3>
               <ul className="card-description">
-                <li>Provide access to infrastructure, funding, and expert networks.</li>
-                <li>Promote entrepreneurship among students, researchers, and local communities.</li>
-                <li>Enable startups to scale through industry partnerships and global platforms.</li>
+                <li>Incubate and support students, faculty, and entrepreneurs in transforming ideas into viable businesses.</li>
+                <li>Foster innovation in emerging fields such as medical devices, drones, robotics, and green energy.</li>
+                <li>Provide mentorship, funding, and partnerships to accelerate first-of-its-kind innovations toward market leadership.</li>
                 {/* <li>Drive impact through research-based innovation and market validation.</li> */}
               </ul>
               <button className="cta-button120">GET IN TOUCH</button>

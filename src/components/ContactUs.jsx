@@ -46,20 +46,20 @@ const ContactUs = () => {
           
           <div className="student-badge">
             <div className="badge-content">
-              <span className="number">40K+</span>
+              <span className="number">24K+</span>
               <span className="text">STUDENT ACTIVE</span>
             </div>
           </div>
           
           <div className="student-image-container">
-            <img
-              src="ChatGPT Image Jun 23, 2025, 04_25_28 PM.webp"
-              alt="Student with backpack"
-              className={`student-image ${imageLoaded ? 'loaded' : ''}`}
-              loading="lazy"
-              onLoad={handleImageLoad}
-            />
-          </div>
+  <img
+    src="ChatGPT Image Jun 23, 2025, 04_25_28 PM.webp"  
+    alt="Student with backpack"
+    className={`student-image ${imageLoaded ? 'loaded' : ''}`}
+    loading="lazy"
+    onLoad={handleImageLoad}
+  />
+</div>
         </div>
         
         <div className="right-section">

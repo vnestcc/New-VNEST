@@ -24,16 +24,16 @@ const StepToApply = ({ onGoToApplication }) => {
       title: "Choose your program",
       description: "Select from our wide range of educational programs that best align with your career goals and interests. Our advisors can help guide your decision."
     },
-    {
-      number: "04",
-      title: "Additional information about yourself or your circumstances",
-      description: "Share any additional details about your background, circumstances, or special requirements that might be relevant to your application and enrollment process."
-    },
-    {
-      number: "05",
-      title: "Payment of fee",
-      description: "Complete the payment process for your application fee and any required deposits. Multiple payment options are available for your convenience."
-    }
+    // {
+    //   number: "04",
+    //   title: "Additional information about yourself or your circumstances",
+    //   description: "Share any additional details about your background, circumstances, or special requirements that might be relevant to your application and enrollment process."
+    // },
+    // {
+    //   number: "05",
+    //   title: "Payment of fee",
+    //   description: "Complete the payment process for your application fee and any required deposits. Multiple payment options are available for your convenience."
+    // }
   ];
 
   useEffect(() => {

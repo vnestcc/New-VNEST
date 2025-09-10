@@ -4,16 +4,19 @@ import './Stats.css';
 const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [counts, setCounts] = useState({
-    universities: 0,
     students: 0,
-    courses: 0
+    startups: 0,
+    funding: 0,
+    internships: 0
   });
   const sectionRef = useRef(null);
 
+  // 🎯 Target V-NEST numbers
   const targetCounts = {
-    universities: 100,
-    students: 20000,
-    courses: 150
+    students: 9032,
+    startups: 24,
+    funding: 1.5,       // in Crores
+    internships: 162
   };
 
   useEffect(() => {
@@ -45,17 +48,18 @@ const Stats = () => {
     const duration = 2000; // 2 seconds
     const frameRate = 60;
     const totalFrames = Math.round(duration / (1000 / frameRate));
-    
+
     let frame = 0;
     const counter = setInterval(() => {
       frame++;
       const progress = frame / totalFrames;
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      
+
       setCounts({
-        universities: Math.round(targetCounts.universities * easeOutQuart),
         students: Math.round(targetCounts.students * easeOutQuart),
-        courses: Math.round(targetCounts.courses * easeOutQuart)
+        startups: Math.round(targetCounts.startups * easeOutQuart),
+        funding: parseFloat((targetCounts.funding * easeOutQuart).toFixed(1)),
+        internships: Math.round(targetCounts.internships * easeOutQuart)
       });
 
       if (frame === totalFrames) {
@@ -79,45 +83,58 @@ const Stats = () => {
           <div className={`stats-text ${isVisible ? 'animate-fade-up' : ''}`}>
             <h2 className="stats-title">The V-NEST Story Through Numbers</h2>
             <p className="stats-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua.
+              In just a few years, V-NEST, VIT Chennai’s Startup & Research
+              Foundation, has emerged as a thriving hub of innovation,
+              incubation, and entrepreneurship. Backed by strong partners like
+              Startup TN, EDII, and Startup India, V-NEST empowers students,
+              faculty, and alumni to transform groundbreaking ideas into
+              successful ventures.
             </p>
           </div>
 
           {/* Right side - Statistics */}
           <div className="stats-grid">
+            {/* Students Benefited */}
             <div className={`stat-card ${isVisible ? 'animate-bounce-1' : ''}`}>
               <div className="stat-number">
-                {counts.universities >= 100 ? '100+' : counts.universities}
+                {counts.students >= 9000 ? '9000+' : formatNumber(counts.students)}
               </div>
               <div className="stat-label">
-                <span>Worldwide</span>
-                <span>Universities</span>
+                <span>Students</span>
+                <span>Benefited</span>
               </div>
             </div>
 
+            {/* Startups Incubated */}
             <div className={`stat-card ${isVisible ? 'animate-bounce-2' : ''}`}>
               <div className="stat-number">
-                {formatNumber(counts.students)}
+                {counts.startups >= 24 ? '24+' : counts.startups}
               </div>
               <div className="stat-label">
-                <span>Trusted</span>
-                <span>Students</span>
+                <span>Startups</span>
+                <span>Incubated</span>
               </div>
             </div>
 
+            {/* Funding Raised */}
             <div className={`stat-card ${isVisible ? 'animate-bounce-3' : ''}`}>
               <div className="stat-number">
-                {counts.courses >= 150 ? '150+' : counts.courses}
+                ₹{counts.funding >= 1.5 ? '1.5 Cr+' : counts.funding + ' Cr'}
               </div>
               <div className="stat-label">
-                <span>Academic</span>
-                <span>Courses</span>
+                <span>Funding</span>
+                <span>Raised</span>
+              </div>
+            </div>
+
+            {/* Internships Offered */}
+            <div className={`stat-card ${isVisible ? 'animate-bounce-4' : ''}`}>
+              <div className="stat-number">
+                {counts.internships >= 162 ? '162+' : counts.internships}
+              </div>
+              <div className="stat-label">
+                <span>Internships</span>
+                <span>Offered</span>
               </div>
             </div>
           </div>

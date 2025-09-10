@@ -11,7 +11,7 @@ import ContactUs from './ContactUs';
 import StepToApply from './StepToApply';
 import Alumni from './Alumni';
 import FAQ from './FAQ';
-import Blog from './Blog';
+// import Blog from './Blog';
 import EcosystemPartners from './EcosystemPartners';
 import ApplyNow from './ApplyNow';
 import Footer from './Footer';
@@ -39,7 +39,7 @@ const LandingPage = ({ onGoToApplication, onGoToAdmin, onGoToCareers }) => {
       <section id="faqs">
         <FAQ />
       </section>
-      <Blog />
+      {/* <Blog /> */}
       <section id="sponsors">
         <EcosystemPartners />
       </section>
