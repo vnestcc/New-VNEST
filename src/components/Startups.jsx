@@ -41,25 +41,25 @@ const Startups = ({ onGoBack }) => {
     });
   }, []);
 
-  // Real startup data with logos from sample folder
+  // Real startup data with logos from public folder
   const startupsData = [
     // Section 1 (0-9)
     [
-      { id: 1, name: "CITTAA", logo: "./sample/removedbg/CITTAA-removebg-preview.png", description: "Innovative technology solutions for urban development and smart city initiatives" },
-      { id: 2, name: "CRACKUBE", logo: "./sample/removedbg/CRACKUBE_LOGO_JPG_TRANSPARENT-removebg-preview.png", description: "Advanced software development and digital transformation services" },
-      { id: 3, name: "Chakaralaya Analytics", logo: "./sample/removedbg/Chakaralaya_Analytics-removebg-preview.png", description: "Data analytics and business intelligence solutions for enterprises" },
-      { id: 4, name: "FEYNMAN TECHSOL", logo: "./sample/removedbg/FEYNMAN_TECHSOL-removebg-preview.png", description: "Technology solutions and engineering services for modern businesses" },
-      { id: 5, name: "INICIOTEK", logo: "./sample/removedbg/INICIOTEK-removebg-preview.png", description: "Startup technology incubation and development platform" },
-      { id: 6, name: "JIVAN", logo: "./sample/removedbg/JIVAN-removebg-preview.png", description: "Healthcare technology and life sciences innovation solutions" },
-      { id: 7, name: "MEDxAI Innovations", logo: "./sample/removedbg/LOGO_MEDxAI_Innovations-Photoroom.png", description: "AI-powered medical diagnostics and healthcare automation" },
-      { id: 8, name: "MAFKIN ROBOTICS", logo: "./sample/removedbg/MAFKIN_ROBOTICS-removebg-preview.png", description: "Advanced robotics solutions for industrial automation" },
-      { id: 9, name: "Mechatronix India", logo: "./sample/removedbg/Mechatronix_India-removebg-preview.png", description: "Mechatronics engineering and automation technology services" },
-      { id: 10, name: "Mechonix D2R", logo: "./sample/removedbg/Mechonix_D2R-removebg-preview.png", description: "Design to reality engineering solutions and product development" }
+      { id: 1, name: "CITTAA", logo: "/sample/removedbg/CITTAA-removebg-preview.png", description: "Innovative technology solutions for urban development and smart city initiatives" },
+      { id: 2, name: "CRACKUBE", logo: "/sample/removedbg/CRACKUBE_LOGO_JPG_TRANSPARENT-removebg-preview.png", description: "Advanced software development and digital transformation services" },
+      { id: 3, name: "Chakaralaya Analytics", logo: "/sample/removedbg/Chakaralaya_Analytics-removebg-preview.png", description: "Data analytics and business intelligence solutions for enterprises" },
+      { id: 4, name: "FEYNMAN TECHSOL", logo: "/sample/removedbg/FEYNMAN_TECHSOL-removebg-preview.png", description: "Technology solutions and engineering services for modern businesses" },
+      { id: 5, name: "INICIOTEK", logo: "/sample/removedbg/INICIOTEK-removebg-preview.png", description: "Startup technology incubation and development platform" },
+      { id: 6, name: "JIVAN", logo: "/sample/removedbg/JIVAN-removebg-preview.png", description: "Healthcare technology and life sciences innovation solutions" },
+      { id: 7, name: "MEDxAI Innovations", logo: "/sample/removedbg/LOGO_MEDxAI_Innovations-Photoroom.png", description: "AI-powered medical diagnostics and healthcare automation" },
+      { id: 8, name: "MAFKIN ROBOTICS", logo: "/sample/removedbg/MAFKIN_ROBOTICS-removebg-preview.png", description: "Advanced robotics solutions for industrial automation" },
+      { id: 9, name: "Mechatronix India", logo: "/sample/removedbg/Mechatronix_India-removebg-preview.png", description: "Mechatronics engineering and automation technology services" },
+      { id: 10, name: "Mechonix D2R", logo: "/sample/removedbg/Mechonix_D2R-removebg-preview.png", description: "Design to reality engineering solutions and product development" }
     ],
     // Section 2 (10-11) - Additional real startups
     [
-      { id: 11, name: "Quinproc", logo: "./sample/removedbg/Quinproc-removebg-preview.png", description: "Process optimization and quality management solutions" },
-      { id: 12, name: "STEMTEC", logo: "./sample/removedbg/STEMTEC_logo-removebg-preview.png", description: "STEM education technology and learning platform solutions" }
+      { id: 11, name: "Quinproc", logo: "/sample/removedbg/Quinproc-removebg-preview.png", description: "Process optimization and quality management solutions" },
+      { id: 12, name: "STEMTEC", logo: "/sample/removedbg/STEMTEC_logo-removebg-preview.png", description: "STEM education technology and learning platform solutions" }
     ]
   ];
 
