@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './DiscoverMore.css';
 
-const DiscoverMore = () => {
+const DiscoverMore = ({ onGoToApplication }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -53,7 +53,7 @@ const DiscoverMore = () => {
 Join the V-NEST ecosystem and take the first step toward becoming a successful entrepreneur. From ideation to impact, we’re here to guide you at every milestone.
           </p>
           
-          <button className="cta-button">
+          <button className="cta-button" onClick={onGoToApplication}>
             KNOW MORE
           </button>
         </div>

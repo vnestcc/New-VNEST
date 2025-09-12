@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Clock, DollarSign, Briefcase } from 'lucide-react';
 import './JobModal.css';
 
-const JobModal = ({ job, onClose }) => {
+const JobModal = ({ job, onClose, onGoToApplication }) => {
   if (!job) return null;
 
   return (
@@ -55,7 +55,7 @@ const JobModal = ({ job, onClose }) => {
         </div>
 
         <div className="job-modal-footer">
-          <button className="job-apply-btn">Apply Now</button>
+          <button className="job-apply-btn" onClick={onGoToApplication}>Apply Now</button>
           <button className="job-save-btn">Save Job</button>
         </div>
       </div>

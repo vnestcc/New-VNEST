@@ -36,7 +36,7 @@ const Alumni = () => {
           <div className="green-background1"></div>
           <div className="alumni-image">
             <img 
-              src="https://web.archive.org/web/20240627165030im_/https://eduventures.net.in/wp-content/uploads/2023/09/enjoying-the-campus-life.jpg" 
+              src="./image.webp" 
               alt="Alumni student"
             />
           </div>
@@ -44,12 +44,12 @@ const Alumni = () => {
         
         <div className={`alumni-text-section ${isVisible ? 'slide-in-left' : ''}`}>
           <div className="quote">
-            " I relied on my independence, tenacity and ability to take things lightly — because college was a walk in the park compared to where I grew up."
+            "At V-NEST, we're dedicated to empowering innovators who dare to think differently. Join us in creating solutions that will shape tomorrow's world. Your vision, our support—together we'll build something extraordinary."
           </div>
           
           <div className="attribution">
-            <div className="author">— Angelina Francis</div>
-            <div className="year">ALUMNI 2020</div>
+            <div className="author">— Dr. Sasikumar M</div>
+            <div className="year">DIRECTOR - V-NEST</div>
           </div>
         </div>
       </div>

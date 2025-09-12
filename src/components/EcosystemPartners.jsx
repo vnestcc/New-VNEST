@@ -36,8 +36,7 @@ const EcosystemPartners = () => {
           <h2 className="ecosystem-title">Ecosystem Partners</h2>
           <div className="ecosystem-underline"></div>
           <p className="ecosystem-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            Driving innovation through powerful strategic collaborations that accelerate startup growth and ecosystem development.
           </p>
         </div>
 

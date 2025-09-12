@@ -128,7 +128,7 @@ const Stats = () => {
             </div>
 
             {/* Internships Offered */}
-            <div className={`stat-card ${isVisible ? 'animate-bounce-4' : ''}`}>
+            {/* <div className={`stat-card ${isVisible ? 'animate-bounce-4' : ''}`}>
               <div className="stat-number">
                 {counts.internships >= 162 ? '162+' : counts.internships}
               </div>
@@ -136,7 +136,7 @@ const Stats = () => {
                 <span>Internships</span>
                 <span>Offered</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

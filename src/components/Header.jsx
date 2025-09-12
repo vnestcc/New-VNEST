@@ -3,7 +3,7 @@ import './Header.css'; // Import your CSS file for styling
 import { Menu, X, User, LogOut, Settings } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
-const Header = ({ onGoToApplication, onGoToAdmin, onGoToCareers }) => {
+const Header = ({ onGoToApplication, onGoToAdmin, onGoToCareers, onGoToConvenors, onGoToStartups }) => {
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -104,32 +104,38 @@ const Header = ({ onGoToApplication, onGoToAdmin, onGoToCareers }) => {
                   CONTACT US
                 </button>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <button 
                   onClick={() => scrollToSection('faqs')} 
                   className="nav-link nav-button"
                 >
                   FAQs
                 </button>
-              </li>
-              
-
-           
-              <li className="nav-item">
-                <button 
-                  onClick={() => scrollToSection('sponsors')} 
-                  className="nav-link nav-button"
-                >
-                  SPONSORS
-                </button>
-              </li>
+              </li> */}
+      
               
               <li className="nav-item">
-                <button 
-                  onClick={onGoToCareers} 
+                <button
+                  onClick={onGoToCareers}
                   className="nav-link nav-button"
                 >
                   CAREERS
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  onClick={onGoToConvenors}
+                  className="nav-link nav-button"
+                >
+                  CONVENORS
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  onClick={onGoToStartups}
+                  className="nav-link nav-button"
+                >
+                  STARTUPS
                 </button>
               </li>
             </ul>
@@ -249,11 +255,27 @@ const Header = ({ onGoToApplication, onGoToAdmin, onGoToCareers }) => {
             </li>
             
             <li className="mobile-nav-item">
-              <button 
-                onClick={() => { onGoToCareers(); closeMenu(); }} 
+              <button
+                onClick={() => { onGoToCareers(); closeMenu(); }}
                 className="mobile-nav-link nav-button"
               >
                 CAREERS
+              </button>
+            </li>
+            <li className="mobile-nav-item">
+              <button
+                onClick={() => { onGoToConvenors(); closeMenu(); }}
+                className="mobile-nav-link nav-button"
+              >
+                CONVENORS
+              </button>
+            </li>
+            <li className="mobile-nav-item">
+              <button
+                onClick={() => { onGoToStartups(); closeMenu(); }}
+                className="mobile-nav-link nav-button"
+              >
+                STARTUPS
               </button>
             </li>
             <li className="mobile-nav-item mobile-cta1">

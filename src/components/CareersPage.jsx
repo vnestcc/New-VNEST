@@ -4,7 +4,7 @@ import Careers from './Careers';
 import JobModal from './JobModal';
 import './CareersPage.css';
 
-const CareersPage = ({ onGoBack }) => {
+const CareersPage = ({ onGoBack, onGoToApplication }) => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -41,9 +41,10 @@ const CareersPage = ({ onGoBack }) => {
         <Careers onJobClick={handleJobClick} />
       </main>
       {isModalOpen && (
-        <JobModal 
-          job={selectedJob} 
-          onClose={handleCloseModal} 
+        <JobModal
+          job={selectedJob}
+          onClose={handleCloseModal}
+          onGoToApplication={onGoToApplication}
         />
       )}
     </div>

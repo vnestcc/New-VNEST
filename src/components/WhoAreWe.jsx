@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './WhoAreWe.css';
 
-const WhoAreWe = () => {
+const WhoAreWe = ({ onGoToApplication }) => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -84,14 +84,14 @@ const WhoAreWe = () => {
             <p className="subtext">
               Backed by a strong academic environment and anchored in VIT’s commitment to innovation, V-NEST helps aspiring entrepreneurs turn their ideas into viable, impact-driven ventures. With a focus on sustainability, digital transformation, and industry alignment, our programs empower startups to solve real-world problems.
             </p>
-            <button className="know-more-btn">KNOW MORE</button>
+            <button className="know-more-btn" onClick={onGoToApplication}>KNOW MORE</button>
           </div>
 
           {/* Right Content with Image and Stats */}
           <div className="content-right">
             <div className="image-container">
               <img
-                src="https://web.archive.org/web/20240627165030im_/https://eduventures.net.in/wp-content/uploads/2023/09/closeup-shot-two-domed-towers-old-royal-naval-college-greenwich-london-2048x1138.webp"
+                src="./abt-vnest.webp"
                 alt="University Building"
                 loading="lazy"
               />

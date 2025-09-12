@@ -64,7 +64,7 @@ const Hero = ({ onGoToApplication }) => {
           {/* Graduate Student Image */}
           <div className="student-image-wrapper">
             <img 
-              src="ChatGPT Image May 26, 2025, 08_03_54 PM.webp"
+              src="enter.webp"
               alt="Graduate student with diploma"
               className="student-image1"
               loading="lazy"

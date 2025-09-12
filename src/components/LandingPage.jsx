@@ -16,22 +16,22 @@ import EcosystemPartners from './EcosystemPartners';
 import ApplyNow from './ApplyNow';
 import Footer from './Footer';
 
-const LandingPage = ({ onGoToApplication, onGoToAdmin, onGoToCareers }) => {
+const LandingPage = ({ onGoToApplication, onGoToAdmin, onGoToCareers, onGoToConvenors, onGoToStartups }) => {
   return (
     <>
-      <Header onGoToApplication={onGoToApplication} onGoToAdmin={onGoToAdmin} onGoToCareers={onGoToCareers} />
+      <Header onGoToApplication={onGoToApplication} onGoToAdmin={onGoToAdmin} onGoToCareers={onGoToCareers} onGoToConvenors={onGoToConvenors} onGoToStartups={onGoToStartups} />
       <Hero onGoToApplication={onGoToApplication} />
       <section id="about">
-        <WhoAreWe />
+        <WhoAreWe onGoToApplication={onGoToApplication} />
       </section>
-      <GrowWithUs />
+      <GrowWithUs onGoToApplication={onGoToApplication} />
       <Stats />
-      <DiscoverMore />
+      <DiscoverMore onGoToApplication={onGoToApplication} />
       <section id="services">
         <OurServices />
       </section>
       <section id="contact">
-        <ContactUs />
+        <ContactUs onGoToApplication={onGoToApplication} />
       </section>
       <WhyChoose />
       <StepToApply onGoToApplication={onGoToApplication} />

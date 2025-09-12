@@ -96,7 +96,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './GrowWithUs.css';
 
-const GrowWithUs = () => {
+const GrowWithUs = ({ onGoToApplication }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -135,7 +135,7 @@ const GrowWithUs = () => {
               <p className="card-description">
               To be a leading hub of innovation and entrepreneurship, empowering transformative ideas to become market-leading solutions with global impact.
               </p>
-              <button className="cta-button100">GET IN TOUCH</button>
+              <button className="cta-button100" onClick={onGoToApplication}>GET IN TOUCH</button>
             </div>
             <div className="card-image">
               <img 
@@ -156,7 +156,7 @@ const GrowWithUs = () => {
                 <li>Provide mentorship, funding, and partnerships to accelerate first-of-its-kind innovations toward market leadership.</li>
                 {/* <li>Drive impact through research-based innovation and market validation.</li> */}
               </ul>
-              <button className="cta-button120">GET IN TOUCH</button>
+              <button className="cta-button120" onClick={onGoToApplication}>GET IN TOUCH</button>
             </div>
             <div className="card-image">
               <img 

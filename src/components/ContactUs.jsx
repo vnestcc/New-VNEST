@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ContactUs.css';
 
-const ContactUs = () => {
+const ContactUs = ({ onGoToApplication }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const componentRef = useRef(null);
@@ -79,7 +79,7 @@ const ContactUs = () => {
           </ul>
 
           
-          <button className="contact-button">
+          <button className="contact-button" onClick={onGoToApplication}>
             CONTACT US
           </button>
         </div>

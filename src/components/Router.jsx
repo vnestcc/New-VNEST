@@ -4,6 +4,8 @@ import LandingPage from './LandingPage';
 import ApplicationDashboard from './ApplicationDashboard';
 import AdminDashboard from './AdminDashboard';
 import CareersPage from './CareersPage';
+import Convenors from './Convenors';
+import Startups from './Startups';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 
@@ -25,6 +27,8 @@ const Router = () => {
   // Navigation functions
   const goToLanding = () => setCurrentPage('landing');
   const goToCareers = () => setCurrentPage('careers');
+  const goToConvenors = () => setCurrentPage('convenors');
+  const goToStartups = () => setCurrentPage('startups');
   const goToApplication = () => {
     if (!isAuthenticated()) {
       setShowLoginModal(true);
@@ -68,14 +72,20 @@ const Router = () => {
       case 'admin':
         return <AdminDashboard onGoToLanding={goToLanding} />;
       case 'careers':
-        return <CareersPage onGoBack={goToLanding} />;
+        return <CareersPage onGoBack={goToLanding} onGoToApplication={goToApplication} />;
+      case 'convenors':
+        return <Convenors onGoBack={goToLanding} />;
+      case 'startups':
+        return <Startups onGoBack={goToLanding} />;
       case 'landing':
       default:
         return (
-          <LandingPage 
+          <LandingPage
             onGoToApplication={goToApplication}
             onGoToAdmin={goToAdmin}
             onGoToCareers={goToCareers}
+            onGoToConvenors={goToConvenors}
+            onGoToStartups={goToStartups}
           />
         );
     }
