@@ -67,16 +67,16 @@ const ContactUs = ({ onGoToApplication }) => {
             VNEST has signed strategic MOUs with several organizations that bring unique value to our incubatees:
           </h1>
           
-          <ul className="description">
-            <li>Entreovert People Association</li>
-            <li>Physics Mindboggler Scientific Pvt. Ltd.</li>
-            <li>Singapore South Asia Chamber of Commerce & Industry (SSACCI)</li>
-            <li>Institute of Technology and Network Training (ITNT)</li>
-            <li>Open Weaver India Pvt. Ltd.</li>
-            <li>Tamil Nadu Apex Skill Development Centre for Logistics (TNASDCL)</li>
-            <li>Indian Overseas Bank (via CANG)</li>
-            <li>Qmax Systems India Pvt. Ltd.</li>
-          </ul>
+          <div className="description">
+            <div className="partner-item">Entreovert People Association</div>
+            <div className="partner-item">Physics Mindboggler Scientific Pvt. Ltd.</div>
+            <div className="partner-item">Singapore South Asia Chamber of Commerce & Industry (SSACCI)</div>
+            <div className="partner-item">Institute of Technology and Network Training (ITNT)</div>
+            <div className="partner-item">Open Weaver India Pvt. Ltd.</div>
+            <div className="partner-item">Tamil Nadu Apex Skill Development Centre for Logistics (TNASDCL)</div>
+            <div className="partner-item">Indian Overseas Bank (via CANG)</div>
+            <div className="partner-item">Qmax Systems India Pvt. Ltd.</div>
+          </div>
 
           
           <button className="contact-button" onClick={onGoToApplication}>

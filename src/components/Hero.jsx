@@ -64,7 +64,7 @@ const Hero = ({ onGoToApplication }) => {
           {/* Graduate Student Image */}
           <div className="student-image-wrapper">
             <img 
-              src="enter.webp"
+              src="enter1.webp"
               alt="Graduate student with diploma"
               className="student-image1"
               loading="lazy"
