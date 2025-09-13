@@ -47,7 +47,7 @@ const Convenors = ({ onGoBack }) => {
     },
     {
       id: 2,
-      name: "Dr. Ravi V",
+      name: "Dr. Sheena Christabel Pravin",
       title: "Assistant Director, V-NEST (IIC)",
       image: "./image2.webp"
     },

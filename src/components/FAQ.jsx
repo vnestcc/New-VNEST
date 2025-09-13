@@ -9,11 +9,11 @@ const FAQ = () => {
   const faqData = [
     {
       question: "WHO CAN APPLY TO V-NEST?",
-      answer: "Anyone with a voable startup idea or early-stage startup can apply."
+      answer: "Anyone with a viable startup idea or early-stage startup can apply."
     },
     {
       question: "WHAT KIND OF SUPPORT DOES V-NEST OFFER?",
-      answer: "V-NEST offers mentorship, funding access, workspace and networking."
+      answer: "V-NEST offers mentorship, funding access, workspace and networking opportunities."
     },
     {
       question: "IS THERE ANY FEE TO INCUBATE A STARTUP AT V-NEST?",
