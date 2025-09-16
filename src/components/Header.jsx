@@ -142,7 +142,14 @@ const Header = ({ onGoToApplication, onGoToAdmin, onGoToCareers, onGoToConvenors
           </nav>
 
           <div className="cta-section">
-            <a href="https://solveathon.vnest.org/" className="cta-button1" target='_blank'>SOLVEATHON</a>
+            <div className="logo-section1">
+              <img
+                src="./VITcc.webp"
+                alt="V-NEST Logo"
+                className="logo-img"
+                loading="lazy"
+              />
+            </div>
             
             {isAuthenticated() && (
               <div className="user-menu-container">
