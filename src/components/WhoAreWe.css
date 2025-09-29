@@ -8,6 +8,35 @@
   position: relative;
 }
 
+/* Image Slider Banner styles */
+.image-slider-banner {
+  width: 100%;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.slider-container {
+  display: flex;
+  animation: slide 20s linear infinite;
+  width: max-content;
+}
+
+.slider-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin: 0 10px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -77,6 +106,7 @@
 .know-more-btn {
   background: linear-gradient(135deg, #8b5cf6, #a855f7);
   color: white;
+  margin-top: 10px;
   border: none;
   padding: 12px 24px;
   font-size: 0.9rem;

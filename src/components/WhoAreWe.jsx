@@ -100,6 +100,22 @@ const WhoAreWe = ({ onGoToApplication }) => {
           </div>
         </div>
 
+        {/* Image Slider Banner */}
+        <div className="image-slider-banner">
+          <div className="slider-container">
+            {/* First set of images */}
+            <img src="./vnest/1.webp" alt="VIT Chennai" className="slider-image" />
+            <img src="./vnest/2.webp" alt="Understanding" className="slider-image" />
+            <img src="./vnest/3.webp" alt="VIT Campus" className="slider-image" />
+            <img src="./vnest/4.webp" alt="VIT Chennai" className="slider-image" />
+            {/* Duplicate set of images for seamless loop */}
+            <img src="./vnest/5.webp" alt="VIT Chennai" className="slider-image" />
+            <img src="./vnest/1.webp" alt="Understanding" className="slider-image" />
+            <img src="./vnest/2.webp" alt="VIT Campus" className="slider-image" />
+            <img src="./vnest/3.webp" alt="VIT Chennai" className="slider-image" />
+          </div>
+        </div>
+
         {/* Collaboration Cards */}
         <div className="collaboration-cards">
           {collaborationCards.map((card) => (

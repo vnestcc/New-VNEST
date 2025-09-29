@@ -36,8 +36,7 @@ const OurServices = () => {
         <div className={`services-header ${isVisible ? 'animate-in' : ''}`}>
           <h2 className="services-title">Incubation Programs</h2>
           <p className="services-subtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-            dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            Our incubation programs are designed to nurture innovative ideas and transform them into successful ventures. With tailored mentorship, access to industry networks, funding opportunities, and skill development, we empower startups to thrive from ideation to scaling.
           </p>
         </div>
 
