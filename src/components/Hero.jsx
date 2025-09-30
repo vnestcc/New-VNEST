@@ -56,21 +56,21 @@ const Hero = ({ onGoToApplication }) => {
         {/* Right Visual with Student and Violet Bars */}
         <div className={`hero-visual ${isVisible ? 'fade-in-right' : ''}`}>
           {/* Violet Decorative Bars */}
-           <div className="violet-bars">
+           {/* <div className="violet-bars">
             <div className="violet-bar bar-1"></div>
             <div className="violet-bar bar-2"></div>
             <div className="violet-bar bar-3"></div>
-          </div> 
+          </div>  */}
 
           {/* Graduate Student Image */}
-          <div className="student-image-wrapper">
+          {/* <div className="student-image-wrapper">
             <img 
               src="enter1.webp"
               alt="Graduate student with diploma"
               className="student-image1"
               loading="lazy"
             />
-          </div> 
+          </div>  */}
         </div>
       </div>
     </section>
